@@ -6,6 +6,8 @@ var employeeSchema = mongoose.Schema({
         employee_department: String,
         employee_designation: String,
         employee_salary: Number,
+        employee_federal_tax: Number,
+        employee_state_tax: Number,
         img_path: String,
         employee_healthPremium: Number,
         employee_lifePremium: Number,

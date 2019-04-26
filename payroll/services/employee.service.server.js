@@ -46,9 +46,7 @@ function findEmployeeByEmployeename(req, res) {
 
 
 function createEmployee(req, res) {
-    console.log("creating new employee");
     var employee = req.body;
-    console.log(employee);
     employeeModel.createEmployee(employee)
         .then(function (employee) {
             console.log(employee);

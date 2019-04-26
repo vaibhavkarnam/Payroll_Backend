@@ -13,12 +13,11 @@ var employees = {
 
 function createEmployee(employee) {
 
-    console.log("inserting in model");
      if (employee.img_path === '' || employee.img_path === undefined) {
-        employee.img_path = "https://image.shutterstock.com/image-vector/vector-avatar-icon-260nw-383411185.jpg"
+        employee.img_path = "https://github.com/vaibhavkarnam/EasyPayroll/blob/master/src/assets/avatar_icon.png?raw=true"
     }
     employee.employee_takeHomeSalary = employee.employee_salary - employee.employee_healthPremium - employee.employee_lifePremium
-    - employee.employee_retirementPlan;
+    - employee.employee_retirementPlan - employee.employee_federal_tax - employee.employee_state_tax;
     return employeeModel
         .create(employee);
 
@@ -42,7 +41,7 @@ function findEmployeeByEmployeeName(employeename) {
 
 function updateEmployee(employeeId, employee) {
     if (employee.img_path === '' || employee.img_path === undefined) {
-        employee.img_path = "https://image.shutterstock.com/image-vector/vector-avatar-icon-260nw-383411185.jpg"
+        employee.img_path = "https://github.com/vaibhavkarnam/EasyPayroll/blob/master/src/assets/avatar_icon.png?raw=true"
     }
     return employeeModel.update({_id: employeeId}, {
 
@@ -52,6 +51,8 @@ function updateEmployee(employeeId, employee) {
             employee_department: employee.employee_department,
             employee_designation: employee.employee_designation,
             employee_salary: employee.employee_salary,
+            employee_federal_tax: employee.employee_federal_tax,
+            employee_state_tax: employee.employee_state_tax,
             img_path: employee.img_path,
             employee_healthPremium: employee.employee_healthPremium,
             employee_lifePremium: employee.employee_lifePremium,
@@ -59,7 +60,7 @@ function updateEmployee(employeeId, employee) {
             employee_emailId: employee.employee_emailId,
             employee_phone: employee.employee_phone,
             employee_takeHomeSalary: employee.employee_salary - employee.employee_healthPremium - employee.employee_lifePremium
-                                    - employee.employee_retirementPlan
+                                    - employee.employee_retirementPlan - employee.employee_federal_tax - employee.employee_state_tax
         },
     });
 }
