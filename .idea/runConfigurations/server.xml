@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="server" type="NodeJSConfigurationType" path-to-js-file="server.js" working-dir="$PROJECT_DIR$">
+    <envs>
+      <env name="DEBUG" value="payroll-backend:*" />
+      <env name="MLAB_USERNAME" value="admin" />
+      <env name="MLAB_PASSWORD" value="admin" />
+      <env name="MONGO_CONNECTION_STRING" value="mongodb://127.0.0.1:27017/test" />
+      <env name="MLAB_CONNECTION_STRING" value="@ds137139.mlab.com:37139/heroku_d64prf40" />
+    </envs>
+    <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSStartBrowserRunConfigurationExtension">
+      <browser url="http://localhost:3000/" />
+    </EXTENSION>
+    <method v="2" />
+  </configuration>
+</component>
